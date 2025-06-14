@@ -34,6 +34,7 @@ Available commands:
    read           Read from supported IO ports
    write          Write to supported IO ports
    get            Retrieve the value of a scalar system variable
+   set            Set the value of a scalar system variable
 
 See 'dominh <command> --help' for more information on a specific command.
 
@@ -69,6 +70,10 @@ if __name__ == '__main__':
     elif args['<command>'] == 'get':
         from dominh.tool import dominh_get
         dominh_get.main(argv=argv, skip_upload=skip_upload)
+
+    elif args['<command>'] == 'set':
+        from dominh.tool import dominh_set
+        dominh_set.main(argv=argv, skip_upload=skip_upload))
 
     else:
         sys.stderr.write(f"'{args['<command>']}' is not a dominh command.\n{__doc__}")
