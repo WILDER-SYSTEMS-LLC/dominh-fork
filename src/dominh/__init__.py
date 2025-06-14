@@ -352,7 +352,7 @@ class ScalarVariable(Variable):
 
     @val.setter
     def val(self, val: t.Type[t.Union[bool, float, int, str]]) -> None:
-        if type(val) != self.typ:
+        if not isinstance(val, self.typ):
             raise ValueError(f"Cannot write {type(val)} to variable of type {self.typ}")
         # we explicitly convert to str here, as set_scalar_var(..) will always
         # send values as strings

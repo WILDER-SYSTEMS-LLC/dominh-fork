@@ -79,7 +79,7 @@ def comset(
         raise ValueError("Need either val or comment")
 
     if val:
-        real_flag = 1 if type(val) == float else -1
+        real_flag = 1 if isinstance(val, float) else -1
         params = {'sValue': val, 'sIndx': idx, 'sRealFlag': real_flag, 'sFc': fc}
 
     if comment:

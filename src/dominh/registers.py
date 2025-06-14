@@ -54,7 +54,7 @@ def set_strreg(conx: Connection, idx: int, val: str) -> None:
     :param val: The value to write to the register
     :type val: str
     """
-    assert type(val) == str
+    assert isinstance(val, str)
     comset_val(conx, ValueFuncCode.STRREG, idx, val=val)
 
 
